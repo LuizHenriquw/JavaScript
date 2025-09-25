@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #863232;
+            margin: 0;
+            padding: 20px;
+            color: #ffffff;
+        }
+        #area {
+            background-color: rgb(4, 230, 230);
+            height: 200px ;
+            width: 200px;
+            text-align: center;
+            line-height: 200px;
+            text-align: center;
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Començando com dom</h1>
+    <p>Aqui vai para o resultado</p>
+    <p>Apredendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <div id="area" onclick="clicar()">Clique em mim</div>
+
+    <script>
+        function clicar() {
+            document.getElementById('area')
+            area.innerHTML = 'Clicou'
+        }
+    </script>
+       
+        
+</body>
+</html>
