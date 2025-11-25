@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do dia</title>
+    <style>
+        section{
+            background-color: rgb(241, 241, 241);
+            height: 300px;
+            width: 460PX;
+            margin: auto;
+            border-radius: 15px;     
+           }
+        h1{
+            color: white;
+            text-align: center;            
+        }
+
+        body{
+            background-color: #3113db;
+            
+        }
+        div{
+            text-align: center;
+            padding: 5px;
+          
+        }
+        
+    </style>
+</head>
+<body onload=carregar()>
+    <h1>Hora do dia</h1>
+    <section>
+        <div id="msg">
+
+        </div>
+        <div id="imagem" >
+            <img  src="imagens/amanhecerci1r.png" alt="">
+        </div>
+    </section>
+
+    <script>
+        function carregar(){
+            var msg=document.getElementById('msg')
+            var imagem=document.getElementById('imagem')
+            var data= new Date()
+            var hora=data.getHours()
+            hora=1
+            msg.innerHTML=`agora são ${hora} horas`
+            if(hora>=0 && hora<=12){
+                imagem.src='imagens/amanhecerci1r.png'
+                document.body.style.background='#b3b328'
+
+            }else if(hora>12 && hora<=18){
+                imagem.src='imagens/tardecirculo1.png'
+                document.body.style.background='#b98411'
+
+            }else{
+                imagem.src='imagens/noitecirculo1.png'
+                document.body.style.background='#131212'
+            }
+
+        }
+
+
+
+    </script>
+
+</body>
+</html>

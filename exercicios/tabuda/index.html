@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem</title>
+    <style>
+        body{
+            background-color:rgb(75, 75, 211);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+        header{
+            text-align: center;
+            margin: 50px;
+            color: white;
+            font-size: 30px;
+        }
+        section{
+            height: 500px;
+            width: 500px;
+            background-color: white;
+            margin: auto;
+            padding: 20px;
+
+        }
+
+        div{
+            margin: 10px;
+
+        }
+
+
+        footer{
+            text-align: center;
+            color:white;
+            margin: 20px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <header>Tabuada</header>
+
+    <section>
+        <div>
+            <p>
+            Número: <input type="number" name="num" id="num">
+            <input type="submit" value="Gerar tabuada"  onclick="gerar()">
+            </p>
+        </div>
+        
+        <div>
+           <select name="tabuada" id="tabuada" size="10"></select>
+           
+
+        </div>
+    </section>
+    <footer>CursoemVideo</footer>
+
+    <script>
+        function gerar(){
+            let num=document.getElementById("num")
+            let tab=document.getElementById('tabuada')
+            if(num.value.length==0){
+            
+                window.alert("Por favor preencher os campos corretamente")
+            }else{
+                let n=Number(num.value)
+                let c=1
+                while(c<=10){
+                   let item =document.createElement('option')
+                   item.text=`${n} x ${c} = ${n*c}`
+                   item.value=`tab${c}`
+                   tab.appendChild(item)
+                   c++              
+                  
+                }
+            
+            }
+                
+            
+
+
+
+
+
+        }
+
+
+
+
+
+    </script>
+
+
+</body>

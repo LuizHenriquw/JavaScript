@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem</title>
+    <style>
+        body{
+            background-color:rgb(75, 75, 211);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+        header{
+            text-align: center;
+            margin: 50px;
+            color: white;
+            font-size: 30px;
+        }
+        section{
+            
+            width: 500px;
+            background-color: white;
+            margin: auto;
+            border-radius: 7px;
+            padding: 10px;
+           
+        }
+        footer{
+            text-align: center;
+            color:white;
+            margin: 20px;
+        }
+        input{
+            margin: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <header>Vamos contar</header>
+
+    <section>
+        <div>
+            inicio:<input type="text" name="inicio" id="inicio"> <br>
+            Fim: <input type="text" name="fim" id="fim"> <br>
+            Passo: <input type="text" name="passo" id="passo"> <br>
+            <input type="button" value="Contar" onclick="contar()">
+            
+        </div>
+        
+        <div >
+            <p>Contagem:</p>
+            <p id="res"></p>
+           
+        </div>
+    </section>
+
+    <footer>CursoemVideo</footer>
+</body>
+ 
+<script>
+   function contar(){
+        var incio=window.document.getElementById('inicio')
+        var fim=document.getElementById('fim')
+        var passo=document.getElementById('passo')
+       
+        var i = Number(inicio.value);
+        var f = Number(fim.value);
+        var p = Number(passo.value);
+        if(i.value.length==0 || f.value.length==0 || p.value.length==0){
+            window.alert=('Erro,dados nao estao escritos corretamente')
+        }
+
+
+
+
+
+     
+        if(i>f){
+             for(c=i;c>=f;c-=p){
+                res.innerHTML+=c
+            }
+            res.innerHTML+='....acabou a contagem'
+
+        } else{
+            for(c=i;c<=f;c+=p){
+                res.innerHTML+=c
+               
+
+            }
+            res.innerHTML+='....acabou a contagem'
+
+        }
+       
+
+
+
+    }        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

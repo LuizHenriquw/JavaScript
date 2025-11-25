@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data de Nascimento</title>
+</head>
+   <style>
+        section{
+            background-color: rgb(241, 241, 241);
+            height: 300px;
+            width: 460PX;
+            margin: auto;
+            border-radius: 15px;     
+            padding: 10px;
+            font-size: 20px;
+           }
+        h1{
+            color: white;
+            text-align: center;            
+        }
+
+        body{
+            background-color: #3113db;
+            
+        }
+        div{
+            text-align: center;
+            padding: 5px;
+          
+        }
+        
+    </style>
+
+
+<body>
+    <h1>Verificador de idade</h1>
+    <section>
+        <p>
+            <label for="nascimento">Ano de nascimento
+            </label>    
+            <input type="number" name="nascimento" id="nas">
+        
+        </p>
+
+        <p>Sexo: 
+            <input type="radio" name="sexo" id="masc">
+            <label for="masc">Masculino</label>
+            <input type="radio" name="sexo" id="fem">
+            <label for="fem">Feminino</label>
+        </p>
+        
+        <input type="button" value="Verificar" onclick="verificar()">
+
+        <div id="res">
+            <p>Preencha os dados acima para ver o resultado!</p>
+        </div>
+    </section>
+    
+    
+    <script>
+        function verificar(){
+            var data=new Date()
+            var ano= data.getFullYear()
+            var fano=document.getElementById('nas')
+            var res=document.getElementById('res')
+            if(fano.value.length==0  || Number(fano.value)>ano){
+                window.alert('Erro,os dados nao estao corretos')
+            } else{
+                var fsex=document.getElementsByName('sexo')
+                var idade=ano-Number(fano.value)
+                var genero=''
+                if (fsex[0].checked){
+                    genero='masculino'
+                } else if(fsex[1].checked){
+                    genero='mulher'
+                }
+                 
+
+            }
+        }
+
+    </script>
+</body> 
+</html>
